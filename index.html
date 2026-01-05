@@ -1,371 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory Makers Patna | The Royal Signature</title>
-    
-    <!-- FONTS: Cinzel (Royal), Manrope (Modern), Pinyon Script (Cursive) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Manrope:wght@200;300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory Makers Patna | The Royal Signature</title>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'brand-black': '#050505',
-                        'brand-gold': '#D4AF37', /* Classic Gold */
-                        'brand-gold-light': '#F3E5AB',
-                        'brand-charcoal': '#121212',
-                    },
-                    fontFamily: {
-                        'royal': ['"Cinzel"', 'serif'],
-                        'script': ['"Pinyon Script"', 'cursive'],
-                        'sans': ['"Manrope"', 'sans-serif'],
-                    },
-                    backgroundImage: {
-                        'gold-gradient': 'linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c)',
-                    }
-                }
-            }
-        }
-    </script>
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Manrope:wght@200;300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
 
-    <style>
-        /* BASE SETTINGS */
-        body { background-color: #050505; color: #f3f3f3; overflow-x: hidden; }
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
 
-        /* GOLD TEXT EFFECT */
-        .text-gold-gradient {
-            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% auto;
-            animation: shine 5s linear infinite;
-        }
-        @keyframes shine { to { background-position: 200% center; } }
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        /* HERO SLIDER (KEN BURNS ZOOM) */
-        .hero-slide {
-            position: absolute; inset: 0;
-            background-size: cover; background-position: center;
-            opacity: 0; transform: scale(1);
-            transition: opacity 2s ease, transform 10s ease;
-            z-index: 1;
-        }
-        .hero-slide.active { opacity: 0.6; transform: scale(1.15); z-index: 2; } /* Lower opacity for dark luxury feel */
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-        /* GLASS BOX (MAGIC) */
-        .glass-box {
-            background: rgba(20, 20, 20, 0.4);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            box-shadow: 0 0 50px rgba(0,0,0,0.8);
-            position: relative;
-            z-index: 10;
-        }
-        .glass-box::before {
-            content: ''; position: absolute;
-            inset: -1px; padding: 1px; 
-            background: linear-gradient(45deg, transparent, #D4AF37, transparent);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-        }
+<style>
+body { background-color: #050505; color: #f3f3f3; overflow-x: hidden; }
+.text-gold-gradient {
+  background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shine 5s linear infinite;
+}
+@keyframes shine { to { background-position: 200% center; } }
 
-        /* IMAGE HOVER REVEAL */
-        .portfolio-card { position: relative; overflow: hidden; }
-        .portfolio-card img { transition: transform 0.7s ease; }
-        .portfolio-card:hover img { transform: scale(1.1); }
-        .portfolio-overlay {
-            background: linear-gradient(to top, #000 0%, transparent 100%);
-            opacity: 0; transition: opacity 0.5s;
-        }
-        .portfolio-card:hover .portfolio-overlay { opacity: 1; }
+.hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transform: scale(1); transition: opacity 2s ease, transform 12s ease; z-index: 1; }
+.hero-slide.active { opacity: 1; transform: scale(1.15); z-index: 2; }
 
-        /* BUTTON GLOW */
-        .btn-gold {
-            position: relative; overflow: hidden; transition: all 0.4s;
-        }
-        .btn-gold:hover {
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-            background-color: #D4AF37; color: #000;
-        }
-    </style>
+.glass-box { background: rgba(20,20,20,0.4); backdrop-filter: blur(20px); border: 1px solid rgba(212,175,55,0.3); box-shadow: 0 0 50px rgba(0,0,0,0.8); position: relative; z-index: 10; text-align:center; }
+
+.portfolio-card { position: relative; overflow: hidden; }
+.portfolio-card img { transition: transform 0.7s ease; }
+.portfolio-card:hover img { transform: scale(1.1); }
+.portfolio-overlay { background: linear-gradient(to top, #000 0%, transparent 100%); opacity: 0; transition: opacity 0.5s; }
+.portfolio-card:hover .portfolio-overlay { opacity: 1; }
+
+.btn-gold { position: relative; overflow: hidden; transition: all 0.4s; }
+.btn-gold:hover { box-shadow: 0 0 20px rgba(212,175,55,0.4); background-color: #D4AF37; color: #000; }
+</style>
+
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="fixed w-full z-50 top-0 py-6 transition-all duration-300 bg-brand-black/90 backdrop-blur-md border-b border-brand-gold/10">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <!-- Brand -->
-            <a href="#" class="text-center group">
-                <h1 class="font-royal text-2xl md:text-3xl text-gold-gradient tracking-widest">MEMORY MAKERS</h1>
-                <p class="font-sans text-[10px] tracking-[0.5em] text-white/50 uppercase mt-1">Patna • 2026</p>
-            </a>
+<!-- NAVBAR -->
+<nav class="fixed w-full z-50 top-0 py-6 bg-brand-black/90 backdrop-blur-md border-b border-brand-gold/10">
+<div class="container mx-auto px-6 flex justify-between items-center">
+<a href="#" class="text-center group">
+<h1 class="font-royal text-2xl md:text-3xl text-gold-gradient tracking-widest">MEMORY MAKERS</h1>
+<p class="font-sans text-[10px] tracking-[0.5em] text-white/50 uppercase mt-1">Patna • 2026</p>
+</a>
+<div class="hidden md:flex items-center space-x-12">
+<a href="#about" class="font-sans text-xs tracking-widest text-white hover:text-brand-gold uppercase transition">The Studio</a>
+<a href="#portfolio" class="font-sans text-xs tracking-widest text-white hover:text-brand-gold uppercase transition">Showcase</a>
+<a href="#reviews" class="font-sans text-xs tracking-widest text-white hover:text-brand-gold uppercase transition">Love Notes</a>
+<a href="https://wa.me/919122724434" target="_blank" class="px-8 py-3 border border-brand-gold text-brand-gold text-xs tracking-widest uppercase hover:bg-brand-gold hover:text-black transition duration-300">Inquire</a>
+</div>
+<div class="md:hidden text-brand-gold text-2xl"><i class="fas fa-bars"></i></div>
+</div>
+</nav>
 
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center space-x-12">
-                <a href="#about" class="font-sans text-xs tracking-widest text-white hover:text-brand-gold uppercase transition">The Studio</a>
-                <a href="#portfolio" class="font-sans text-xs tracking-widest text-white hover:text-brand-gold uppercase transition">Showcase</a>
-                <a href="#reviews" class="font-sans text-xs tracking-widest text-white hover:text-brand-gold uppercase transition">Love Notes</a>
-                <a href="https://wa.me/919122724434" target="_blank" class="px-8 py-3 border border-brand-gold text-brand-gold text-xs tracking-widest uppercase hover:bg-brand-gold hover:text-black transition duration-300">
-                    Inquire
-                </a>
-            </div>
-            
-            <div class="md:hidden text-brand-gold text-2xl"><i class="fas fa-bars"></i></div>
-        </div>
-    </nav>
+<!-- HERO SECTION -->
+<header class="relative w-full h-screen flex items-center justify-center overflow-hidden bg-black">
+<div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1605300228308-4e67277494f1?q=80&w=2000&auto=format&fit=crop');"></div>
+<div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1583934555026-67b5fb2e9d51?q=80&w=2000&auto=format&fit=crop');"></div>
+<div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1623692888636-f0464d39c0d9?q=80&w=2000&auto=format&fit=crop');"></div>
+<div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop');"></div>
+<div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1632168545828-5696614a60db?q=80&w=2000&auto=format&fit=crop');"></div>
 
-    <!-- HERO SECTION (DARK LUXURY) -->
-    <header class="relative w-full h-screen flex items-center justify-center overflow-hidden bg-black">
-        
-        <!-- AUTO SLIDER (VERIFIED INDIAN WEDDING IMAGES) -->
-        <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1583934555026-67b5fb2e9d51?q=80&w=2000&auto=format&fit=crop');"></div> <!-- Varmala -->
-        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1623692888636-f0464d39c0d9?q=80&w=2000&auto=format&fit=crop');"></div> <!-- Couple -->
-        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1605300228308-4e67277494f1?q=80&w=2000&auto=format&fit=crop');"></div> <!-- Sindoor/Emotional -->
-        <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop');"></div> <!-- Decor -->
-        
-        <!-- Dark Overlay Gradient -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60 z-1"></div>
+<div class="glass-box p-12 max-w-2xl mx-4" data-aos="fade-up" data-aos-duration="2000">
+<p class="font-script text-3xl text-brand-gold mb-4">The Royal Signature</p>
+<h1 class="font-royal text-5xl md:text-7xl text-white mb-6 leading-none">
+Timeless<br><span class="text-gold-gradient">Heritage</span>
+</h1>
+<p class="font-sans text-white/70 tracking-widest text-xs uppercase mb-10 leading-loose">
+Capturing the soul of Indian weddings with cinematic grandeur.<br>
+Patna's most exclusive photography house.
+</p>
+<a href="https://wa.me/919122724434" class="btn-gold inline-flex items-center gap-3 px-10 py-4 border border-brand-gold text-brand-gold text-xs font-bold tracking-widest uppercase">
+<span>Reserve Your Date</span><i class="fa-solid fa-arrow-right"></i>
+</a>
+</div>
 
-        <!-- THE MAGIC BOX -->
-        <div class="glass-box text-center p-12 max-w-2xl mx-4" data-aos="zoom-in-up" data-aos-duration="1500">
-            <p class="font-script text-3xl text-brand-gold mb-4">The Royal Signature</p>
-            
-            <h1 class="font-royal text-5xl md:text-7xl text-white mb-6 leading-none">
-                Timeless<br><span class="text-gold-gradient">Heritage</span>
-            </h1>
-            
-            <p class="font-sans text-white/70 tracking-widest text-xs uppercase mb-10 leading-loose">
-                Capturing the soul of Indian weddings with cinematic grandeur. <br>
-                Patna's most exclusive photography house.
-            </p>
+<div class="absolute bottom-10 z-10 animate-bounce"><i class="fa-solid fa-chevron-down text-brand-gold text-xl"></i></div>
+</header>
 
-            <a href="https://wa.me/919122724434" class="btn-gold inline-flex items-center gap-3 px-10 py-4 border border-brand-gold text-brand-gold text-xs font-bold tracking-widest uppercase">
-                <span>Reserve Your Date</span>
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
-        </div>
-        
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 z-10 animate-bounce">
-            <i class="fa-solid fa-chevron-down text-brand-gold text-xl"></i>
-        </div>
-    </header>
+<!-- ABOUT -->
+<section id="about" class="py-32 bg-brand-charcoal relative">
+<div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-20 items-center relative z-10">
+<div data-aos="fade-right">
+<span class="text-brand-gold font-sans text-xs tracking-[0.3em] uppercase">The Philosophy</span>
+<h2 class="font-royal text-4xl md:text-5xl text-white mt-4 mb-8 leading-tight">
+We Don't Just Click.<br>We <span class="text-gold-gradient">Immortalize.</span>
+</h2>
+<p class="font-sans text-gray-400 leading-loose font-light mb-8">
+Memory Makers captures every ritual, emotion, and celebration of Indian weddings in cinematic grandeur.
+</p>
+<div class="border-l-2 border-brand-gold pl-6">
+<p class="font-sans text-2xl text-brand-gold">Suraj Mehra</p>
+<p class="font-sans text-[10px] tracking-widest text-white/50 uppercase mt-1">Founder & Creative Director</p>
+</div>
+</div>
 
-    <!-- STUDIO INTRO -->
-    <section id="about" class="py-32 bg-brand-charcoal relative">
-        <!-- Decorative Background -->
-        <div class="absolute top-0 right-0 w-1/3 h-full opacity-5 bg-[url('https://www.transparenttextures.com/patterns/black-scales.png')]"></div>
+<div class="relative" data-aos="fade-left">
+<div class="relative z-10 border border-brand-gold/30 p-2 bg-black">
+<img src="https://images.unsplash.com/photo-1610173826014-9608154deb2a?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+</div>
+<div class="absolute -bottom-10 -left-10 w-2/3 border border-brand-gold/30 p-2 bg-black z-20">
+<img src="https://images.unsplash.com/photo-1632168545828-5696614a60db?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover">
+</div>
+</div>
+</div>
+</section>
 
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-20 items-center relative z-10">
-            <div data-aos="fade-right">
-                <span class="text-brand-gold font-sans text-xs tracking-[0.3em] uppercase">The Philosophy</span>
-                <h2 class="font-royal text-4xl md:text-5xl text-white mt-4 mb-8 leading-tight">
-                    We Don't Just Click.<br>We <span class="text-gold-gradient">Immortalize.</span>
-                </h2>
-                <p class="font-sans text-gray-400 leading-loose font-light mb-8">
-                    Based in Patna, Memory Makers is a sanctuary for couples who refuse to settle for the ordinary. An Indian wedding is a symphony of chaos and love—the turmeric on a grandmother's hands, the nervous flutter of a bride's veil, the royal gait of the groom. We capture it all.
-                </p>
-                
-                <div class="border-l-2 border-brand-gold pl-6">
-                    <p class="font-script text-2xl text-brand-gold">Suraj Mehra</p>
-                    <p class="font-sans text-[10px] tracking-widest text-white/50 uppercase mt-1">Founder & Creative Director</p>
-                </div>
-            </div>
+<!-- PORTFOLIO -->
+<section id="portfolio" class="py-32 bg-brand-black">
+<div class="container mx-auto px-6 mb-20 text-center">
+<i class="fa-solid fa-gem text-brand-gold text-2xl mb-4"></i>
+<h2 class="font-royal text-4xl text-white">The Signature Collection</h2>
+<p class="text-white/40 font-sans text-xs tracking-widest mt-2 uppercase">Selected Works 2024-2026</p>
+</div>
 
-            <div class="relative" data-aos="fade-left">
-                <!-- Stacking Images Effect -->
-                <div class="relative z-10 border border-brand-gold/30 p-2 bg-black">
-                    <img src="https://images.unsplash.com/photo-1632168545828-5696614a60db?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
-                </div>
-                <div class="absolute -bottom-10 -left-10 w-2/3 border border-brand-gold/30 p-2 bg-black z-20">
-                    <img src="https://images.unsplash.com/photo-1610173826014-9608154deb2a?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover">
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+<div class="portfolio-card h-[500px] cursor-pointer group" data-aos="fade-up">
+<img src="https://images.unsplash.com/photo-1610173826014-9608154deb2a?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover">
+<div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8">
+<p class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Rituals</p>
+<h3 class="font-royal text-2xl text-white">Sacred Fire</h3>
+</div>
+</div>
 
-    <!-- SHOWCASE (100% INDIAN WEDDING IMAGES) -->
-    <section id="portfolio" class="py-32 bg-brand-black">
-        <div class="container mx-auto px-6 mb-20 text-center">
-            <i class="fa-solid fa-gem text-brand-gold text-2xl mb-4"></i>
-            <h2 class="font-royal text-4xl text-white">The Signature Collection</h2>
-            <p class="text-white/40 font-sans text-xs tracking-widest mt-2 uppercase">Selected Works 2024-2026</p>
-        </div>
+<div class="portfolio-card h-[500px] cursor-pointer group" data-aos="fade-up" data-aos-delay="100">
+<img src="https://images.unsplash.com/photo-1595535560643-982c761922c0?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover">
+<div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8">
+<p class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Portraits</p>
+<h3 class="font-royal text-2xl text-white">Bridal Grace</h3>
+</div>
+</div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
-            
-            <!-- 1. The Pheras -->
-            <div class="portfolio-card h-[500px] cursor-pointer group" data-aos="fade-up">
-                <img src="https://images.unsplash.com/photo-1519308474310-15f69ce45502?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Indian Pheras">
-                <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8">
-                    <p class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Rituals</p>
-                    <h3 class="font-royal text-2xl text-white">The Sacred Fire</h3>
-                </div>
-            </div>
+<div class="portfolio-card h-[500px] cursor-pointer group" data-aos="fade-up" data-aos-delay="200">
+<img src="https://images.unsplash.com/photo-1621621667797-e06afc21085c?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover">
+<div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8">
+<p class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Celebration</p>
+<h3 class="font-royal text-2xl text-white">Haldi & Joy</h3>
+</div>
+</div>
+</div>
+</section>
 
-            <!-- 2. The Bride (Red) -->
-            <div class="portfolio-card h-[500px] cursor-pointer group" data-aos="fade-up" data-aos-delay="100">
-                <img src="https://images.unsplash.com/photo-1595535560643-982c761922c0?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Indian Bride">
-                <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8">
-                    <p class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Portraits</p>
-                    <h3 class="font-royal text-2xl text-white">Bridal Grace</h3>
-                </div>
-            </div>
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({ once: true, duration: 1500 });
 
-            <!-- 3. The Groom -->
-            <div class="portfolio-card h-[500px] cursor-pointer group" data-aos="fade-up" data-aos-delay="200">
-                <img src="https://images.unsplash.com/photo-1621621667797-e06afc21085c?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Haldi Ceremony">
-                <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8">
-                    <p class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Celebration</p>
-                    <h3 class="font-royal text-2xl text-white">Haldi & Joy</h3>
-                </div>
-            </div>
+const slides = document.querySelectorAll('.hero-slide');
+let currentSlide = 0;
 
-            <!-- 4. Decor -->
-            <div class="portfolio-card h-[500px] cursor-pointer group" data-aos="fade-up">
-                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Wedding Decor">
-                <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8">
-                    <p class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Ambience</p>
-                    <h3 class="font-royal text-2xl text-white">Royal Decor</h3>
-                </div>
-            </div>
+function nextSlide() {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add('active');
+}
 
-            <!-- 5. Couple -->
-            <div class="portfolio-card h-[500px] cursor-pointer group" data-aos="fade-up" data-aos-delay="100">
-                <img src="https://images.unsplash.com/photo-1640616949883-93666d3a825b?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Indian Couple">
-                <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8">
-                    <p class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Intimacy</p>
-                    <h3 class="font-royal text-2xl text-white">Golden Hour</h3>
-                </div>
-            </div>
+setInterval(nextSlide, 5000);
+</script>
 
-            <!-- 6. Details -->
-            <div class="portfolio-card h-[500px] cursor-pointer group" data-aos="fade-up" data-aos-delay="200">
-                <img src="https://images.unsplash.com/photo-1610173826014-9608154deb2a?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" alt="Jewellery">
-                <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8">
-                    <p class="text-brand-gold font-sans text-[10px] tracking-widest uppercase">Details</p>
-                    <h3 class="font-royal text-2xl text-white">Heirlooms</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- REVIEWS -->
-    <section id="reviews" class="py-24 bg-brand-charcoal">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="font-royal text-3xl text-white mb-16">Love Notes</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-                <div class="bg-brand-black border border-brand-gold/20 p-10 relative">
-                    <i class="fa-solid fa-quote-left text-brand-gold text-4xl opacity-20 absolute top-4 left-4"></i>
-                    <p class="font-sans text-gray-300 italic mb-6 leading-relaxed">
-                        "Absolute magic. The team captured moments we didn't even know happened. The video makes us cry every time we watch it. Truly premium service."
-                    </p>
-                    <p class="text-brand-gold text-xs font-bold tracking-widest uppercase">— Ananya & Rohan</p>
-                </div>
-                <div class="bg-brand-black border border-brand-gold/20 p-10 relative">
-                    <i class="fa-solid fa-quote-left text-brand-gold text-4xl opacity-20 absolute top-4 left-4"></i>
-                    <p class="font-sans text-gray-300 italic mb-6 leading-relaxed">
-                        "We wanted something royal and non-cheesy. Memory Makers delivered exactly that. The photos look like they belong in a magazine."
-                    </p>
-                    <p class="text-brand-gold text-xs font-bold tracking-widest uppercase">— Priya & Arjun</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER (UPDATED: NO FB, ADDED WHATSAPP) -->
-    <footer class="bg-black pt-20 pb-10 border-t border-brand-gold/30">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
-                
-                <!-- Brand -->
-                <div class="col-span-1 md:col-span-1">
-                    <h2 class="font-royal text-2xl text-white mb-4">MEMORY MAKERS</h2>
-                    <p class="text-gray-500 text-xs leading-relaxed mb-6">
-                        Crafting visual heritage for the modern Indian couple. Based in Patna, available worldwide.
-                    </p>
-                </div>
-
-                <!-- Contact -->
-                <div>
-                    <h3 class="font-sans text-xs tracking-widest text-brand-gold uppercase mb-6">Contact</h3>
-                    <ul class="space-y-4 text-sm text-gray-400">
-                        <li class="flex items-center justify-center md:justify-start gap-3 hover:text-white transition"><i class="fa-brands fa-whatsapp text-brand-gold"></i> +91 9122724434</li>
-                        <li class="flex items-center justify-center md:justify-start gap-3 hover:text-white transition"><i class="fa-solid fa-phone text-brand-gold"></i> +91 9122724434</li>
-                        <li class="flex items-center justify-center md:justify-start gap-3 hover:text-white transition"><i class="fa-regular fa-envelope text-brand-gold"></i> hello@memorymakers.com</li>
-                    </ul>
-                </div>
-
-                <!-- Services -->
-                <div>
-                    <h3 class="font-sans text-xs tracking-widest text-brand-gold uppercase mb-6">Services</h3>
-                    <ul class="space-y-3 text-sm text-gray-400">
-                        <li class="hover:text-brand-gold cursor-pointer transition">Wedding Photography</li>
-                        <li class="hover:text-brand-gold cursor-pointer transition">Cinematic Films</li>
-                        <li class="hover:text-brand-gold cursor-pointer transition">Pre-Wedding</li>
-                        <li class="hover:text-brand-gold cursor-pointer transition">Destination</li>
-                    </ul>
-                </div>
-
-                <!-- Socials (Updated) -->
-                <div>
-                    <h3 class="font-sans text-xs tracking-widest text-brand-gold uppercase mb-6">Follow Us</h3>
-                    <div class="flex justify-center md:justify-start gap-4">
-                        <a href="https://www.instagram.com/memory_makers_patna/" target="_blank" class="h-10 w-10 border border-brand-gold/30 rounded-full flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-black transition-all">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                        <a href="#" class="h-10 w-10 border border-brand-gold/30 rounded-full flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-black transition-all">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
-                        <!-- Added WhatsApp Button Here -->
-                        <a href="https://wa.me/919122724434" class="h-10 w-10 border border-brand-gold/30 rounded-full flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-black transition-all">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-            
-            <div class="border-t border-white/10 mt-16 pt-8 text-center">
-                <p class="font-sans text-[10px] text-white/30 tracking-widest uppercase">
-                    &copy; 2026 Memory Makers Patna. All Rights Reserved.
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- SCRIPTS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ once: true, duration: 1000 });
-
-        // ROBUST AUTO SLIDER
-        const slides = document.querySelectorAll('.hero-slide');
-        let currentSlide = 0;
-        
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-        
-        setInterval(nextSlide, 5000); // 5 Seconds
-    </script>
 </body>
 </html>
