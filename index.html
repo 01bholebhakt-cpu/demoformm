@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory Makers Patna | The Royal Signature</title>
+
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<!-- tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- fontawesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- aos -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+ivory:'#FDFBF7',
+gold:'#D4AF37',
+maroon:'#2B0E0E',
+charcoal:'#1A1A1A'
+},
+fontFamily:{
+royal:['Cinzel'],
+serif:['Cormorant Garamond'],
+sans:['Lato']
+}
+}
+}
+}
+</script>
+
+<style>
+html{scroll-behavior:smooth}
+.slide{
+position:absolute; inset:0;
+background-size:cover;
+background-position:center;
+opacity:0;
+transition:opacity 1.5s ease, transform 8s linear;
+transform:scale(1);
+}
+.slide.active{
+opacity:1;
+transform:scale(1.1);
+}
+.hero-overlay{
+position:absolute; inset:0;
+background:linear-gradient(to bottom,rgba(43,14,14,.4),rgba(43,14,14,.2),rgba(43,14,14,.7));
+z-index:2;
+}
+.reserve-box{
+background:rgba(255,255,255,.1);
+backdrop-filter:blur(12px);
+border:1px solid rgba(212,175,55,.6);
+padding:3rem 4rem;
+text-align:center;
+z-index:10;
+box-shadow:0 20px 50px rgba(0,0,0,.5);
+}
+.portfolio-img{transition:transform .6s}
+.portfolio-item:hover .portfolio-img{transform:scale(1.05)}
+.text-gold{
+background:linear-gradient(to right,#D4AF37,#F3E5AB,#D4AF37);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+</style>
+</head>
+
+<body class="bg-ivory text-charcoal">
+
+<!-- navbar -->
+<nav class="fixed w-full z-50 top-0 bg-maroon/90 backdrop-blur border-b border-gold/30">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<div>
+<h1 class="font-royal text-2xl text-ivory tracking-widest">MEMORY MAKERS</h1>
+<p class="text-gold text-[9px] tracking-[0.4em] uppercase">Patna • India</p>
+</div>
+<a href="https://wa.me/919122724434" class="border border-gold px-6 py-2 text-gold text-xs tracking-widest hover:bg-gold hover:text-maroon transition">Inquire</a>
+</div>
+</nav>
+
+<!-- hero -->
+<header class="relative h-screen overflow-hidden bg-black flex items-center justify-center">
+
+<div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1606214174585-fe31582dc6ee?q=80&w=2560&auto=format&fit=crop')"></div>
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1606214175123-5c5b1e7c41b8?q=80&w=2560&auto=format&fit=crop')"></div>
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1621619856624-42fd193a0661?q=80&w=2560&auto=format&fit=crop')"></div>
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1606214174784-42a47a9c9c95?q=80&w=2560&auto=format&fit=crop')"></div>
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1595535560643-982c761922c0?q=80&w=2560&auto=format&fit=crop')"></div>
+
+<div class="hero-overlay"></div>
+
+<div class="reserve-box" data-aos="zoom-in">
+<i class="fas fa-crown text-gold text-3xl mb-4"></i>
+<p class="text-ivory text-xs tracking-[0.3em] uppercase mb-4">Patna's Finest Wedding Cinema</p>
+<h1 class="font-royal text-5xl text-ivory mb-6">Your Story,<br><span class="italic text-gold">Eternally Captured</span></h1>
+<p class="font-serif italic text-ivory/70 mb-8">Luxury Indian Wedding Photography & Films</p>
+<a href="https://wa.me/919122724434" class="bg-gold text-maroon px-8 py-3 text-xs tracking-widest uppercase font-bold hover:bg-white transition">Reserve Your Date</a>
+</div>
+</header>
+
+<!-- gallery -->
+<section class="py-24 bg-white" id="portfolio">
+<div class="text-center mb-16">
+<h2 class="font-royal text-4xl text-maroon">The Signature Collection</h2>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-2 px-2">
+
+<div class="portfolio-item h-[500px] overflow-hidden">
+<img class="portfolio-img w-full h-full object-cover" src="https://images.unsplash.com/photo-1606214174585-fe31582dc6ee?q=80&w=1600&auto=format&fit=crop">
+</div>
+
+<div class="portfolio-item h-[500px] overflow-hidden">
+<img class="portfolio-img w-full h-full object-cover" src="https://images.unsplash.com/photo-1606214175123-5c5b1e7c41b8?q=80&w=1600&auto=format&fit=crop">
+</div>
+
+<div class="portfolio-item h-[500px] overflow-hidden">
+<img class="portfolio-img w-full h-full object-cover" src="https://images.unsplash.com/photo-1621619856624-42fd193a0661?q=80&w=1600&auto=format&fit=crop">
+</div>
+
+<div class="portfolio-item h-[500px] overflow-hidden">
+<img class="portfolio-img w-full h-full object-cover" src="https://images.unsplash.com/photo-1621621667797-e06afc21085c?q=80&w=1600&auto=format&fit=crop">
+</div>
+
+<div class="portfolio-item h-[500px] overflow-hidden">
+<img class="portfolio-img w-full h-full object-cover" src="https://images.unsplash.com/photo-1606214174784-42a47a9c9c95?q=80&w=1600&auto=format&fit=crop">
+</div>
+
+<div class="portfolio-item h-[500px] overflow-hidden">
+<img class="portfolio-img w-full h-full object-cover" src="https://images.unsplash.com/photo-1595535560643-982c761922c0?q=80&w=1600&auto=format&fit=crop">
+</div>
+
+</div>
+</section>
+
+<!-- footer -->
+<footer class="bg-maroon text-ivory py-14 text-center border-t-4 border-gold">
+<h2 class="font-royal text-3xl mb-2">MEMORY MAKERS</h2>
+<p class="text-gold text-[10px] tracking-[0.3em] uppercase mb-6">Patna • Bihar</p>
+<div class="flex justify-center gap-8 mb-6 text-xl">
+<a href="https://instagram.com/memory_makers_patna"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-youtube"></i></a>
+<a href="#"><i class="fab fa-facebook"></i></a>
+</div>
+<p class="text-xs text-white/40 tracking-widest">&copy; 2025 Memory Makers Patna</p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({once:true});
+const slides=document.querySelectorAll('.slide');
+let i=0;
+setInterval(()=>{
+slides[i].classList.remove('active');
+i=(i+1)%slides.length;
+slides[i].classList.add('active');
+},5000);
+</script>
+
+</body>
+</html>
